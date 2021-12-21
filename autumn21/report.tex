@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+
+\usepackage{styles/log-style}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\bfseries
+
+{\Large Московский Авиационный Институт\\ (национальный исследовательский университет)}
+
+\vspace{36pt}
+
+\large Институт информационных технологий и прикладной математики
+
+\vspace{36pt}
+
+\large Кафедра вычислительной математики и программирования
+
+\vspace{48pt}
+
+Журнал по исследовательской практике (индивидуальный план)
+
+\end{center}
+
+\vspace{120pt}
+
+\begin{flushleft}
+\begin{tabular}{|r|l|}
+\hline
+Студенты & Группа \\
+\hline
+Артемьев Дмитрий Иванович & М8О-406Б-18 \\
+\hline
+Белоусов Егор Владимирович & М8О-207Б-20 \\
+\hline
+Инютин Максим Андреевич & М8О-307Б-19 \\
+\hline
+Команда: & MAI \#2 Artemiev, Belousov, Inyutin \\
+\hline
+\end{tabular}
+\end{flushleft}
+
+\vspace*{\fill}
+
+\begin{center}
+\bfseries
+Москва, \the\year
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\subsection*{Сводная таблица за осень \the\year}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Дата & Название & Время & Место проведения & Решенные задачи & Дорешанные задачи \\
+\hline
+12.09.2021 & Grand Prix of Dolgoprudny WA & 11:00-16:00 & Дистанционно & A, B & C\\
+\hline
+19.09.2021 & Grand Prix of IMO WA & 11:00-16:00 & Дистанционно & A, B & C\\
+\hline
+10.10.2021 & XXII Открытая Всесибирская олимпиада WA & 10:00-15:00 & Дистанционно & A, B & C\\
+\hline
+17.10.2021 & ICPC training MAI 21-22 WA & 11:00-16:00 & Дистанционно & A, B & C\\
+\hline
+24.10.2021 & Grand Prix of Korea WA & 11:00-16:00 & Дистанционно & A, B & C\\
+\hline
+07.11.2021 & Grand Prix of Siberia WA & 11:00-16:00 & Дистанционно & A, B & C\\
+\hline
+14.11.2021 & Grand Prix of EDG & 11:00-16:00 & Дистанционно & A, D, E, G, I & B, F, K \\
+\hline
+21.11.2021 & RuCode 4.0 Div A-B Champoinship & 11:00-16:00 & Дистанционно & B, K & D \\
+\hline
+22.11.2021 & Div A + B Contest 1 & 09:00-14:00 & Дистанционно & C, D, H, L & F, J, K \\
+\hline
+26.11.2021 & Div A Contest 4: The Korean Contest & 09:00-14:00 & Дистанционно & B, C, L & D, G \\
+\hline
+12.12.2021 & Grand Prix of Nanjing !!! & 11:00-16:00 & Дистанционно & A, C, H, M & - \\
+\hline
+19.12.2021 & Moscow Regional Contest & 11:00-16:00 & Дистанционно & A, D, E, F, G, H, N & - \\
+\hline
+\end{tabular}
+}
+
+\subsection*{Явка на контесты}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{|c|c|c|}
+\hline
+Дата & Название & Присутствующие \\
+\hline
+12.09.2021 & Grand Prix of Dolgoprudny & Артемьев, Белоусов, Инютин \\
+\hline
+19.09.2021 & Grand Prix of IMO & Артемьев, Белоусов, Инютин \\
+\hline
+10.10.2021 & XXII Открытая Всесибирская олимпиада & Артемьев, Белоусов, Инютин \\
+\hline
+17.10.2021 & ICPC training MAI 21-22 & Артемьев, Белоусов, Инютин \\
+\hline
+24.10.2021 & Grand Prix of Korea & Артемьев, Белоусов, Инютин \\
+\hline
+07.11.2021 & Grand Prix of Siberia & Артемьев, Белоусов, Инютин \\
+\hline
+14.11.2021 & Grand Prix of EDG & Артемьев, Белоусов, Инютин \\
+\hline
+21.11.2021 & RuCode 4.0 Div A-B Champoinship & Артемьев, Белоусов, Инютин \\
+\hline
+22.11.2021 & Div A + B Contest 1 & Артемьев, Белоусов, Инютин \\
+\hline
+26.11.2021 & Div A Contest 4: The Korean Contest & Артемьев, Белоусов, Инютин \\
+\hline
+12.12.2021 & Grand Prix of Nanjing & Артемьев, Белоусов, Инютин \\
+\hline
+19.12.2021 & Moscow Regional Contest & Артемьев, Белоусов, Инютин \\
+\hline
+\end{tabular}
+}
+
+\pagebreak
+
+\includepdf[pages=10, scale=0.75, pagecommand=\subsection*{Grand Prix of Dolgoprudny 12.09.2021}]{statements/210830.pdf}
+\subsubsection*{Идея}
+Тут вы описываете идею решения, оцениваете сложность...
+
+Например, сложность жадного алгоритма $O(n \cdot \log{n})$, а перебор $O(2 ^ {n} \cdot n ^ 2)$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/gp_dolgop_g.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/gp_dolgop.png}\newline\noindent
+\pagebreak
+
+
+
+\includepdf[pages=3, scale=0.75, pagecommand=\subsection*{Grand Prix of EDG 14.11.2021}]{statements/ocmgp6.en.pdf}
+\subsubsection*{Идея}
+Тривиальный случай, когда изменяется только одна цифра суммы, нам не очень интересен, так как изменяется всего две цифры во всех числах. Гораздо более сложный случай --- замена девяток на нули и нулей на девятки при изменении суммы. Заметим, что для какого-то префикса числа достаточно знать количество цифр <<0>> и <<9>>, чтобы корректно отвечать на запрос.
+
+Используем струкуру данных, поддерживающую модификацию на отрезке для эффективного ответа на запрос и изменение. Во время контеста было реализовано решение с использованием Декартова дерева, которое не прошло по времени из-за большой константы. При дорешивании было реализовано решение, использующее дерево отрезков.
+
+Сложность операций с деревом $O(\log{n})$. Асимптотика решения $O(n \cdot \log{n} + q \cdot \log{n})$.
+
+\subsubsection*{Исходный код}
+\lstinputlisting{src/gp_edg_b.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/gp_edg.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=2, scale=0.75, pagecommand=\subsection*{RuCode 4.0 Div A-B Champoinship 21.11.2021}]{statements/rucodeAB-ru.pdf}
+\subsubsection*{Идея}
+Решение задачи полностью конструктивное, полностью описано в программе. Самый сложный случай --- при нечётных ширине или высоте складов СберМаркета. Асимптотика $O(w \cdot h)$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/rucode_b.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/rucode.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages={14,15}, scale=0.75, pagecommand=\subsection*{Div A + B Contest 1 22.11.2021}]{statements/211122.en.pdf}
+\subsubsection*{Идея}
+Для решения задачи построим дерево отрезков на сумму чисел, стоящих на чётных и нечётных позициях для всего забора. Будет обновлять каждый фрагмент забора и выводить требуемую сумму. Так как суммарно обновлений в дереве будет не более $\sum a_i \leqslant 10 ^ 6$ и $n \leqslant 10 ^ 6$, то итоговая временная сложность решения $O(n \cdot \log{n})$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/mw1_f.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/mw1.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=21, scale=0.75, pagecommand=\subsection*{Div A Contest 4: The Korean Contest 26.11.2021}]{statements/211126.en.pdf}
+\subsubsection*{Идея}
+Используем \textit{std::bitset} для эффективного хранения чисел. Для каждого разряда и для каждой цифры хранится битовое множество позиций чисел из множества $A$. Добавление и удаление чисел из такой структуры очень простое и выполняется фактически за $O(1)$. Пространственная сложность такого хранения $O({{4 \cdot 9 \cdot n}\over{64}}) \approx O(n)$.
+
+Зафиксируем два числа тройки. Выберем только те цифры, которые удовлетворяют условию тройки, добавим в ответ количество индексов чисел. Операция \textit{count} для \textit{std::bitset} выполняется за $O({n \over 64})$, поэтому временная сложность решения $O({{n ^ 3} \over 64})$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/mw4_l.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/mw4.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages={14,15}, scale=0.75, pagecommand=\subsection*{Grand Prix of Nanjing 12.12.2021}]{statements/ocmgp9.en.pdf}
+\subsubsection*{Идея}
+Егор
+\subsubsection*{Исходный код}
+\lstinputlisting{src/gp_nanjing_h.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/gp_nanjing.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=7, scale=0.75, pagecommand=\subsection*{Moscow Regional Contest 19.12.2021}]{statements/contest-25256-en.pdf}
+\subsubsection*{Идея}
+Предпосчитаем $\gcd$ для первых $10000$ чисел. Видно, что для больших чисел почти всегда $\gcd$ его анаграм равен 1. Но есть и исключения, которые мы обработаем отдельно. Наиболее интересны числа, состоящие из чётных цифр и сумма цифр которых делится на три. При перестановке цифр в таком числе делимость на $3$ и $2$ не изменится. Сложность решения $O(t +k)$, где $k$ --- константа предподсчёта $k \approx 10 ^ 4 \cdot 4! \cdot 4 \cdot \log{10 ^ 4}$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/moscow_regional_e.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/moscow_regional.png}\newline\noindent
+\pagebreak
+
+\end{document}

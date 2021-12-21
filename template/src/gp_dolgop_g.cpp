@@ -13,6 +13,7 @@ const ll mod = 1e9 + 7;
 const ll mod2 = 998244353;
 const ld eps = 1e-9;
 const ld PI = acos(-1);
+const ll MAGIC = 32;
 
 int main() {
     ios::sync_with_stdio(false);
@@ -37,12 +38,12 @@ int main() {
     }
     ld res = -1e18;
     for (ll i = 0; i < m; ++i) {
-        for (ll j = max(0ll, i - 50ll); j <= i; ++j) {
+        for (ll j = max(0ll, i - MAGIC); j <= i; ++j) {
             ld E = pref[i] + pref[j] - bad;
             E -= (ld) (z[i].first * z[j].first);
             res = max(res, E);
         }
-    	for (ll j = 0; j <= min(i, 50ll); ++j) {
+    	for (ll j = 0; j <= min(i, MAGIC); ++j) {
             ld E = pref[i] + pref[j] - bad;
             E -= (ld) (z[i].first * z[j].first);
             res = max(res, E);

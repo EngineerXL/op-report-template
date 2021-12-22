@@ -65,9 +65,9 @@
 \hline
 17.10.2021 & ICPC training MAI 21-22 WA & 11:00-16:00 & Дистанционно & A, B & C\\
 \hline
-24.10.2021 & Grand Prix of Korea WA & 11:00-16:00 & Дистанционно & A, B & C\\
+24.10.2021 & Grand Prix of Korea !!! & 11:00-16:00 & Дистанционно & H, G & C \\
 \hline
-07.11.2021 & Grand Prix of Siberia WA & 11:00-16:00 & Дистанционно & A, B & C\\
+07.11.2021 & Grand Prix of Siberia & 11:00-16:00 & Дистанционно & 1, 3, 5, 8 & - \\
 \hline
 14.11.2021 & Grand Prix of EDG & 11:00-16:00 & Дистанционно & A, D, E, G, I & B, F, K \\
 \hline
@@ -132,6 +132,27 @@
 
 
 
+% Можно и другую задачу
+\includepdf[pages={15}, scale=0.75, pagecommand=\subsection*{Grand Prix of Korea 24.10.2021}]{statements/contest-24341-en.pdf}
+\subsubsection*{Идея}
+Напишите сюда что-то
+
+\subsubsection*{Исходный код}
+\lstinputlisting{src/gp_korea_j.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/gp_korea.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages={5, 6}, scale=0.75, pagecommand=\subsection*{Grand Prix of Siberia 07.11.2021}]{statements/ocmgp5.ru.pdf}
+\subsubsection*{Идея}
+Основная сложность --- правильно реализовать систему штрафов в хоккее. Для этого каждую секунду игры. Если в какой-то момент времени на поле произошло событие, то его следует обработать согласно правилам игры. Для этого для каждого игрока обеих команд будем хранить тип штрафа и оставшееся время вне игры, постепенно уменьшая его. Остаётся проверять, сколько игроков на поле и увеличивать время для соответствующего состояния игры. Моделирование работает за константу, поэтому сложность решения $O(60 \cdot 60 \cdot 10 + n) \approx O(n)$.
+
+\subsubsection*{Исходный код}
+\lstinputlisting{src/gp_siberia_5.cpp}
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/gp_siberia.png}\newline\noindent
+\pagebreak
+
 \includepdf[pages=3, scale=0.75, pagecommand=\subsection*{Grand Prix of EDG 14.11.2021}]{statements/ocmgp6.en.pdf}
 \subsubsection*{Идея}
 Тривиальный случай, когда изменяется только одна цифра суммы, нам не очень интересен, так как изменяется всего две цифры во всех числах. Гораздо более сложный случай --- замена девяток на нули и нулей на девятки при изменении суммы. Заметим, что для какого-то префикса числа достаточно знать количество цифр <<0>> и <<9>>, чтобы корректно отвечать на запрос.
@@ -175,6 +196,7 @@
 \includegraphics[scale=0.25]{images/mw4.png}\newline\noindent
 \pagebreak
 
+% Можно и другую задачу
 \includepdf[pages={14,15}, scale=0.75, pagecommand=\subsection*{Grand Prix of Nanjing 12.12.2021}]{statements/ocmgp9.en.pdf}
 \subsubsection*{Идея}
 Егор

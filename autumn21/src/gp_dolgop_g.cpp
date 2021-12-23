@@ -13,7 +13,15 @@ const ll mod = 1e9 + 7;
 const ll mod2 = 998244353;
 const ld eps = 1e-9;
 const ld PI = acos(-1);
-const ll MAGIC = 32;
+
+struct line {
+    ld k;
+    ld b;
+};
+
+ld inter(line f, line s) {
+    return (s.b - f.b) / (f.k - s.k);
+}
 
 int main() {
     ios::sync_with_stdio(false);
@@ -37,17 +45,55 @@ int main() {
         bad += (ld) x[z[i].second] * 0.5;
     }
     ld res = -1e18;
+    deque<line> lines;
     for (ll i = 0; i < m; ++i) {
-        for (ll j = max(0ll, i - MAGIC); j <= i; ++j) {
-            ld E = pref[i] + pref[j] - bad;
-            E -= (ld) (z[i].first * z[j].first);
-            res = max(res, E);
+        ld k = -z[i].first;
+        ld b = pref[i] - bad;
+        line now = {k, b};
+        bool need = true;
+        while (!lines.empty()) {
+            if (lines.front().k == k) {
+                if (b > lines.front().b) {
+                    lines.pop_front();
+                } else {
+                    need = false;
+                    break;
+                }
+            } else {
+                if (lines.size() == 1)break;
+                line f = lines.front();
+                lines.pop_front();
+                line s = lines.front();
+                lines.push_front(f);
+                ld xx = inter(f, s);
+                ld it = inter(f, now);
+                if (it > xx - eps) {
+                    lines.pop_front();
+                } else break;
+            }
         }
-    	for (ll j = 0; j <= min(i, MAGIC); ++j) {
-            ld E = pref[i] + pref[j] - bad;
-            E -= (ld) (z[i].first * z[j].first);
-            res = max(res, E);
+        if (need) {
+            lines.push_front(now);
         }
+        while (lines.size() > 1) {
+            line f = lines.front();
+            lines.pop_front();
+            line s = lines.front();
+            lines.push_front(f);
+            ld xx = inter(f, s);
+            if (xx < z[i].first + eps) {
+                lines.pop_front();
+            } else break;
+        }
+        ld it = lines.front().k * z[i].first + lines.front().b + pref[i];
+        res = max(res, it);
+//        cout << "found: " << it << " | ";
+//        for (ll j = 0; j <= i; ++j) {
+//            ld E = pref[i] + pref[j] - bad;
+//            E -= (ld) (z[i].first * z[j].first);
+//            cout << E << " ";
+//        }
+//        cout << "\n";
     }
     cout << fixed << setprecision(20);
     cout << res << "\n";

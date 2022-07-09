@@ -179,3 +179,92 @@
 \subsubsection*{Положение команды}
 \includegraphics[scale=0.25]{images/moscow_regional.png}\newline\noindent
 \pagebreak
+
+\includepdf[pages=1, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 1}]{statements/220201/220201.en.pdf}
+\subsubsection*{Идея}
+Заметим, что все дни можно разделить на блоки по $T$ дней, тогда все биллборды в одном блоке мы можем посмотреть за один день, таким образом задача сводится к подсчету различных $\dfrac{a_{i}}{T}$ (округлив вниз). Это можно сделать отсортировав исходную последовательность, итоговая сложность $O(n \cdot \log{n})$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220201.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220201.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=5, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 2}]{statements/220202/220202.en.pdf}
+\subsubsection*{Идея}
+Будем решать немного обратную задачу: нужно набрать отрезков наибольшего веса, так чтобы они не образовывали компоненту размера более чем $K$. Отсортируем отрезки по левой границе. Тогда пусть $dp_{i}$ -- лучший ответ, если мы рассматриваем отрезки с $i$ по $n$, переберем количество отрезков и будем жадно с помощью $multiset$ оставлять самые дорогие. Итого решение работает за $O(n^2 \cdot \log{K})$
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220202.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220202.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=6, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 3}]{statements/220203/220203.en.pdf}
+\subsubsection*{Идея}
+Задачу можно легко свести к динамическому программированию на дереве. Все что нам требуется аккуратно обработать краевые случаи. Итоговая сложность $O(n)$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220203.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220203.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=7, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 4}]{statements/220204/220204.en.pdf}
+\subsubsection*{Идея}
+Ввиду небольших ограничений мы можем решить эту задачу по слоям с помощью динамического программирование на подмножествах. Будем считать лучший ответ для каждой маски и для каждого слоя. Переход делается за $O(4^m)$, итоговая сложность $O(n \cdot 4^m)$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220204.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220203.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=4, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 5}]{statements/220206/220206.en.pdf}
+\subsubsection*{Идея}
+Сперва отсеим частные случаи: при $n = 1$ ответ $0$, а при $n = 2$ -- 1. В ином случае возьмем за корень не листовую вершину (такая гарантированно найдется), рассмотрим решение задачи для поддерева с корнем в $v$: для того, что бы все пути от листа к листу в поддереве были четными требуется, чтобы все пути от $v$ до листьев были одинаковой четности, тогда сделаем $dp[v][0]$ -- решения, если все пути четной длины, $dp[v][1]$ -- решение, если все пути нечетной длины. Переходы очевидны. Итоговая сложность $O(n)$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220206.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220206.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=13, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 6}]{statements/220207/220207.en.pdf}
+\subsubsection*{Идея}
+Задача чисто комбинаторная, можно показать, что ответом является сумма чисел Стирлинга второго рода. Таким образом, задачу можно решить за $O((n + m)\log{C})$, где $C = 998244353$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220207.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220207.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=1, scale=0.75, pagecommand=\subsection*{42nd Petrozavodsk Programming Camp, Winter 2022 Day 7}]{statements/220208/220208.en.pdf}
+\subsubsection*{Идея}
+Пусть $c_i$ -- это $a_i + \sum_{j != i} b_j$. Отсортируем изначальную последовательность по невозрастанию по $c_i$, в случае равенства сохраним относительный порядок. Теперь проверим для каждого элемента, что в худшем случае он все равно меньше, чем любой элемент перед ним. Итоговая сложность $O(n\cdot \log{n})$.
+\subsubsection*{Исходный код}
+\lstinputlisting{src/220208.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220208.png}\newline\noindent
+\pagebreak
+
+\includepdf[pages=16, scale=0.75, pagecommand=\subsection*{ICPC 2021-2022 NERC - Northern Eurasia Finals}]{statements/220413/220413.pdf}
+\subsubsection*{Идея}
+Будем последовательно рассматривать всех соседей из стартовой вершины. Запустим из очередного соседа поиск в глубину, но не будем заходить в начальную вершину, и пометим все вершины достижимые вершины, если в процессе поиска мы наткнулись на вершину, помеченную ранее, значит эта вершина может быть конечной вершиной $t$, остается только вывести 2 пути. Итоговая сложность $O(n)$.
+\subsubsection*{Исходный код}
+Утерян
+\lstinputlisting{src/220413.cpp}
+\subsubsection*{Вывод}
+Задача решена.
+\subsubsection*{Положение команды}
+\includegraphics[scale=0.25]{images/220413.png}\newline\noindent
+\pagebreak
